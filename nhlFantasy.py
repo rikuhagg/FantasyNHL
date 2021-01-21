@@ -29,10 +29,13 @@ for j in ids:
         printPlayerName(name)
         
     else:
-        peopleInfo = json.loads((requests.get('https://statsapi.web.nhl.com/api/v1/people/'+j)).text) 
+        peopleInfo = json.loads((requests.get('https://statsapi.web.nhl.com/api/v1/people/'+j)).text)
         stats = json.loads((requests.get('https://statsapi.web.nhl.com/api/v1/people/'+j+'/stats?stats=statsSingleSeason&season=20202021')).text)
 
-        if stats['stats'][0]['splits'] == []:
+        if peopleInfo['people'][0]['primaryPosition']['code'] == 'G':
+            print(True)
+
+        elif stats['stats'][0]['splits'] == []:
             goals = 0
             assists = 0
             
