@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 def jprint(obj):
     # create a formatted string of the Python JSON object
@@ -47,7 +48,7 @@ def maalivahti(Id,pointsTable,peopleInfo,stats):
     print(loppupisteet)
     
     
-    
+alku = time.time()  
 #lue ID:t tiedostosta
 file = open('id.txt')
 lines = file.readlines();
@@ -72,4 +73,4 @@ for j in ids:
         
 print()
 print(pointsTable) #tulostaa sen hetkisenkokonaispistetilanteen
- 
+print(time.time() - alku)

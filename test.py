@@ -1,5 +1,4 @@
-
-
+#kokeilu ja opettelua 
 import requests
 import json
 
